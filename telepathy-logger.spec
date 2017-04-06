@@ -6,7 +6,7 @@
 #
 Name     : telepathy-logger
 Version  : 0.8.2
-Release  : 1
+Release  : 2
 URL      : http://telepathy.freedesktop.org/releases/telepathy-logger/telepathy-logger-0.8.2.tar.bz2
 Source0  : http://telepathy.freedesktop.org/releases/telepathy-logger/telepathy-logger-0.8.2.tar.bz2
 Source99 : http://telepathy.freedesktop.org/releases/telepathy-logger/telepathy-logger-0.8.2.tar.bz2.asc
@@ -91,19 +91,12 @@ lib components for the telepathy-logger package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1491497795
+export SOURCE_DATE_EPOCH=1491498889
 %configure --disable-static
 make V=1  %{?_smp_mflags}
 
-%check
-export LANG=C
-export http_proxy=http://127.0.0.1:9/
-export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
-make VERBOSE=1 V=1 %{?_smp_mflags} check
-
 %install
-export SOURCE_DATE_EPOCH=1491497795
+export SOURCE_DATE_EPOCH=1491498889
 rm -rf %{buildroot}
 %make_install
 
