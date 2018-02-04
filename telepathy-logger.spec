@@ -6,7 +6,7 @@
 #
 Name     : telepathy-logger
 Version  : 0.8.2
-Release  : 4
+Release  : 5
 URL      : http://telepathy.freedesktop.org/releases/telepathy-logger/telepathy-logger-0.8.2.tar.bz2
 Source0  : http://telepathy.freedesktop.org/releases/telepathy-logger/telepathy-logger-0.8.2.tar.bz2
 Source99 : http://telepathy.freedesktop.org/releases/telepathy-logger/telepathy-logger-0.8.2.tar.bz2.asc
@@ -24,9 +24,11 @@ BuildRequires : gtk-doc
 BuildRequires : gtk-doc-dev
 BuildRequires : intltool
 BuildRequires : libxslt-bin
-BuildRequires : perl(XML::Parser)
 BuildRequires : pkgconfig(dbus-1)
+BuildRequires : pkgconfig(dbus-glib-1)
 BuildRequires : pkgconfig(gio-2.0)
+BuildRequires : pkgconfig(glib-2.0)
+BuildRequires : pkgconfig(gobject-2.0)
 BuildRequires : pkgconfig(ice)
 BuildRequires : pkgconfig(libxml-2.0)
 BuildRequires : pkgconfig(sqlite3)
@@ -90,13 +92,16 @@ lib components for the telepathy-logger package.
 %setup -q -n telepathy-logger-0.8.2
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1491498889
-%configure --disable-static
-make V=1  %{?_smp_mflags}
+export SOURCE_DATE_EPOCH=1517764371
+%configure --disable-static PYTHON=/usr/bin/python2
+make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1491498889
+export SOURCE_DATE_EPOCH=1517764371
 rm -rf %{buildroot}
 %make_install
 
