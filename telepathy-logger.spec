@@ -6,7 +6,7 @@
 #
 Name     : telepathy-logger
 Version  : 0.8.2
-Release  : 5
+Release  : 6
 URL      : http://telepathy.freedesktop.org/releases/telepathy-logger/telepathy-logger-0.8.2.tar.bz2
 Source0  : http://telepathy.freedesktop.org/releases/telepathy-logger/telepathy-logger-0.8.2.tar.bz2
 Source99 : http://telepathy.freedesktop.org/releases/telepathy-logger/telepathy-logger-0.8.2.tar.bz2.asc
