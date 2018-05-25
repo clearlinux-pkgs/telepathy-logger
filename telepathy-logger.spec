@@ -6,7 +6,7 @@
 #
 Name     : telepathy-logger
 Version  : 0.8.2
-Release  : 6
+Release  : 7
 URL      : http://telepathy.freedesktop.org/releases/telepathy-logger/telepathy-logger-0.8.2.tar.bz2
 Source0  : http://telepathy.freedesktop.org/releases/telepathy-logger/telepathy-logger-0.8.2.tar.bz2
 Source99 : http://telepathy.freedesktop.org/releases/telepathy-logger/telepathy-logger-0.8.2.tar.bz2.asc
@@ -34,6 +34,7 @@ BuildRequires : pkgconfig(libxml-2.0)
 BuildRequires : pkgconfig(sqlite3)
 BuildRequires : pkgconfig(telepathy-glib)
 BuildRequires : pkgconfig(x11)
+BuildRequires : python
 
 %description
 Telepathy-Logger
@@ -96,12 +97,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1517764371
+export SOURCE_DATE_EPOCH=1527272081
 %configure --disable-static PYTHON=/usr/bin/python2
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1517764371
+export SOURCE_DATE_EPOCH=1527272081
 rm -rf %{buildroot}
 %make_install
 
